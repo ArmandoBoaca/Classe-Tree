@@ -51,16 +51,14 @@ public class Tree {
         } else if (target > root.value) {
             root.right = removeNode(root.right, target);
         } else {
-            // Nodo da rimuovere trovato
 
-            // Caso 1: Nodo senza figli o con un solo figlio
             if (root.left == null) {
                 return root.right;
             } else if (root.right == null) {
                 return root.left;
             }
 
-            // Caso 2: Nodo con due figli
+
             root.value = findMin(root.right);
             root.right = removeNode(root.right, root.value);
         }
